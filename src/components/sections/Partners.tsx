@@ -12,10 +12,10 @@ export default function Partners() {
   ]
   
   return (
-    <section className="py-12 bg-white">
-      <SectionContainer className="px-4 sm:px-6 lg:px-0">
+    <section className="py-4 bg-white">
+      <SectionContainer className="px-3 sm:px-6 lg:px-0">
         {/* inner wrapper holds the horizontal line with side spacing and custom color */}
-        <div className="mx-6 md:mx-8 lg:mx-0 border-b border-gray-300 pb-6">
+          <div className="px-3 sm:px-6 lg:px-0 border-b border-gray-300 pb-8">
           <div>
             <div className="text-[#6F6F6F] font-dm text-[15px] mb-6">
               Trusted by:

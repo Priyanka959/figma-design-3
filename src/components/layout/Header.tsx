@@ -26,7 +26,7 @@ export default function Header() {
       {/* Full-width wrapper */}
       <div className={`transition-all duration-300 w-full mx-auto`}>
         {/* Visual header band (becomes transparent on scroll for md+) */}
-        <div className={`relative duration-300 h-20 bg-white md:bg-white/80 md:backdrop-blur-md shadow-md md:shadow-none rounded-b-2xl md:rounded-b-none overflow-hidden ${isScrolled ? 'md:hidden' : ''}`}>
+        <div className={`relative duration-300 h-20 bg-white md:bg-white/80 md:backdrop-blur-md shadow-md md:shadow-none rounded-b-2xl md:rounded-b-none overflow-hidden ${isScrolled ? 'md:hidden' : ''} ${menuOpen ? 'rounded-b-none' : ''}`}>
           {/* Inner constrained content that becomes a visible pill on md when scrolled */}
               <div className={`w-full max-w-screen-xl mx-auto flex items-center justify-center h-full px-4 sm:px-6 lg:px-8 ${isScrolled ? 'md:max-w-2xl md:mx-auto md:rounded-full md:bg-white md:backdrop-blur-sm md:shadow-md md:px-8 md:py-3 md:relative md:z-50' : ''}`}>
             {/* Logo - Hidden when scrolled */}
@@ -85,38 +85,48 @@ export default function Header() {
         {!isScrolled && (
           <div className="hidden md:block absolute right-8 top-4 z-50">
             <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="sm">
-                <span>Learn More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-0 w-3 h-3 transform -translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10v10" />
-                </svg>
+              <Button variant="primary" size="sm" arrow>
+                Learn More
               </Button>
             </a>
           </div>
         )}
 
-        {/* Mobile dropdown menu - positioned under header and right-aligned */}
-        {menuOpen && (
-          <div className="md:hidden absolute top-full right-0 w-full flex justify-end z-50">
-            <div className="mt-2 mr-6 w-56 bg-white/95 backdrop-blur-md border border-gray-100 rounded-md shadow-sm py-4 px-4">
-              <nav className="flex flex-col space-y-3">
-                <Link href="#benefits" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">
-                  Benefits
-                </Link>
-                <Link href="#specifications" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">
-                  Specifications
-                </Link>
-                <Link href="#how-to" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">
-                  How-to
-                </Link>
-                <Link href="#resources" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">
-                  Contact Us
-                </Link>
-              </nav>
+        {/* Mobile dropdown menu - full-width panel matching desktop styles */}
+        {/* Mobile dropdown menu - full-width panel with smooth slide */}
+        <div className={`md:hidden absolute top-full left-0 w-full z-50 transform transition-all duration-300 ease-out ${menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          <div className={`w-full bg-white ${menuOpen ? 'rounded-b-2xl shadow-md' : ''} overflow-auto max-h-[calc(100vh-160px)]`}>
+            {/* Divider to separate header and menu */}
+            <div className="border-t border-gray-100" />
+
+            {/* Nav items with dividers and desktop font/size */}
+            <nav className="px-6 py-6">
+              <ul className="flex flex-col">
+                <li className="py-4 first:pt-0 border-b border-gray-100">
+                  <Link href="#benefits" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">Benefits</Link>
+                </li>
+                <li className="py-4 border-b border-gray-100">
+                  <Link href="#specifications" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">Specifications</Link>
+                </li>
+                <li className="py-4 border-b border-gray-100">
+                  <Link href="#how-to" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">How-to</Link>
+                </li>
+                <li className="py-4 border-b border-gray-100">
+                  <Link href="#resources" onClick={() => setMenuOpen(false)} className="text-[#000000] font-dm font-bold text-[14px]">Contact Us</Link>
+                </li>
+              </ul>
+            </nav>
+
+            {/* CTA matching desktop button - tightened text/arrow spacing */}
+            <div className="px-6 pb-8 pt-4 mt-3">
+              <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
+                <Button variant="primary" size="sm" arrow>
+                  <span className="font-dm text-[14px]">Learn More</span>
+                </Button>
+              </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   )

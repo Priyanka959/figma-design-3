@@ -6,6 +6,7 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg'
   className?: string
   onClick?: () => void
+  arrow?: boolean
 }
 
 export default function Button({ 
@@ -14,6 +15,7 @@ export default function Button({
   size = 'md',
   className = '',
   onClick 
+  , arrow = false
 }: ButtonProps) {
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200'
   
@@ -33,11 +35,19 @@ export default function Button({
   
   return (
     <button 
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} text-button ${className}`}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} text-button group ${className}`}
       onClick={onClick}
       aria-label={typeof children === 'string' ? children : undefined}
     >
-      {children}
+      <span className="inline-flex items-center">
+        {children}
+        {arrow && (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 transform transition-transform duration-200 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10v10" />
+          </svg>
+        )}
+      </span>
     </button>
   )
 }

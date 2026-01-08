@@ -42,10 +42,10 @@ export default function Features() {
   ]
   
   return (
-    <section id="benefits" className="py-20 bg-white">
-      <SectionContainer className="px-4 sm:px-6 lg:px-0">
+    <section id="benefits" className="py-12 bg-white">
+      <SectionContainer className="px-3 sm:px-6 lg:px-0">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-8">
           <p className="text-[11px] font-roboto-mono text-[#485C11] mb-3">
             Benefits
           </p>

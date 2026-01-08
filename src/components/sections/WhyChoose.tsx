@@ -115,6 +115,8 @@ export default function WhyChoose() {
           </div>
         </div>
       </SectionContainer>
+      {/* Full-width divider separating WhyChoose from next section */}
+      <div className="w-full h-px bg-gray-200 my-12" />
     </section>
   )
 }

@@ -6,9 +6,10 @@ export default function BigPicture() {
     <section id="specifications" className="py-20 bg-white">
       <SectionContainer maxWidth="2xl">
         <div className="px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div className="space-y-8">
+            {/* top divider removed to use the full-width divider from WhyChoose above */}
             <h2 className="text-4xl md:text-5xl font-serif text-gray-900">
               See the Big Picture
             </h2>
@@ -65,7 +66,7 @@ export default function BigPicture() {
             
             <div>
               <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-                <Button variant="primaryLight" size="md">
+                <Button variant="primaryLight" size="md" arrow>
                   Discover More
                 </Button>
               </a>

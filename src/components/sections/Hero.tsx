@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-20 bg-white">
+    <section className="pt-32 pb-8 bg-white">
       <SectionContainer>
         {/* Heading */}
         <div className="text-center mb-16 animate-fade-in px-4">

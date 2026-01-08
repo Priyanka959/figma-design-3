@@ -22,14 +22,14 @@ export default function MapSuccess() {
   
   return (
     <section className="py-20 bg-white">
-      <SectionContainer className="px-4 sm:px-6 lg:px-0">
+      <SectionContainer className="px-3 sm:px-6 lg:px-0">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
           <h2 className="text-[24px] md:text-5xl font-sans font-normal text-[#111827] mt-4 mb-0">
             Map Your Success
           </h2>
           <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-            <Button variant="primaryLight" size="md">
+            <Button variant="primaryLight" size="md" arrow>
               Discover More
             </Button>
           </a>
