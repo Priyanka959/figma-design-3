@@ -2,8 +2,8 @@ import SectionContainer from '@/components/ui/SectionContainer'
 
 export default function Testimonial() {
   return (
-    <section id="how-to" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="how-to" className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Image */}
           <div className="relative order-2 lg:order-1">
@@ -26,8 +26,8 @@ export default function Testimonial() {
               </p>
               
               <div className="pt-4">
-                <p className="font-semibold text-gray-900">John Smith</p>
-                <p className="text-light-gray">Head of Data</p>
+                <p className="text-[15px] font-dm text-[#000000] font-normal">John Smith</p>
+                <p className="text-[10.5px] text-[#485C11]" style={{ fontFamily: '"Roboto Mono", monospace' }}>Head of Data</p>
               </div>
             </div>
           </div>

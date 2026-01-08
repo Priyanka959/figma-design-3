@@ -15,7 +15,7 @@ export default function Partners() {
     <section className="py-4 bg-white">
       <SectionContainer className="px-3 sm:px-6 lg:px-0">
         {/* inner wrapper holds the horizontal line with side spacing and custom color */}
-          <div className="px-3 sm:px-6 lg:px-0 border-b border-gray-300 pb-8">
+          <div className="px-3 sm:px-6 lg:px-0 pt-8 border-b border-gray-300 pb-20">
           <div>
             <div className="text-[#6F6F6F] font-dm text-[15px] mb-6">
               Trusted by:
@@ -30,9 +30,9 @@ export default function Partners() {
                   <Image
                     src={`/assests/${partner.logo}`}
                     alt={partner.name}
-                    width={120}
-                    height={48}
-                    className="object-contain h-8 md:h-10 lg:h-12"
+                    width={140}
+                    height={56}
+                    className="object-contain h-10 md:h-10 lg:h-12"
                   />
                 </div>
               ))}

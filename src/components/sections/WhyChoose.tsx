@@ -1,7 +1,23 @@
-import SectionContainer from '@/components/ui/SectionContainer'
-import Button from '@/components/ui/Button'
+import React from 'react';
+import SectionContainer from '@/components/ui/SectionContainer';
+import Button from '@/components/ui/Button';
 
-export default function WhyChoose() {
+// Helper components for the icons (typed props)
+type IconProps = { className?: string };
+
+const CheckIcon: React.FC<IconProps> = ({ className }) => (
+  <svg className={className} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
+    <path d="M5 13l4 4L19 7"></path>
+  </svg>
+);
+
+const CloseIcon: React.FC<IconProps> = ({ className }) => (
+  <svg className={className} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
+    <path d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+);
+
+export default function WhyChoose(): JSX.Element {
   const columns = [
     {
       title: 'Area',
@@ -12,111 +28,138 @@ export default function WhyChoose() {
         'Advanced AI insights',
         'Ultra-fast browsing',
         'Full UTF-8 support',
- 'Fast and IT support',
       ]
     },
     {
-      title: 'Ideologies',
+      title: 'WebSurge',
       items: [
         'Fast browsing',
         'Basic AI recommendations',
-        'Basic AI recommendations',
-        'Best IT in consectetue',
-        'Exceptur ut occaecat',
-        'Fast and IT support',
-        'Fast and IT support',
+        'Restricts customization',
+        'Basic AI insights',
+        'Fast browsing',
+        'Potential display errors',
       ]
     },
     {
-      title: 'Report Care',
+      title: 'HyperView',
       items: [
         'Moderate speeds',
         'No AI assistance',
         'Steep learning curve',
-        'Best IT in consectetue',
-        'Fast and IT support',
-        'Best IT in consectetue',
-        'Best and IT support',
+        'No AI assistance',
+        'Moderate speeds',
+        'Partial UTF-8 support',
       ]
     },
-  ]
-  
-  const maxItems = Math.max(...columns.map(c => c.items.length))
+  ];
+
+  const maxItems = Math.max(...columns.map(c => c.items.length));
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-white overflow-hidden">
+      {/* fonts are loaded globally; avoid inline imports here to match other components */}
+
       <SectionContainer>
+        {/* Horizontal line at top */}
+        <div className="border-t border-gray-300 w-full mb-12"></div>
+        
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-8">
-            Why Choose Area?
-          </h2>
+        <div className="text-center mb-16 px-4">
+          <span className="text-[#86935b] text-[10.5px] font-medium mb-4 block uppercase tracking-wider">Specs</span>
+          <h2 className="text-5xl md:text-6xl font-serif text-gray-900 mb-6">Why Choose Area?</h2>
+          <p className="text-gray-500 mb-10 text-[15px] max-w-[62ch] mx-auto">
+            You need a solution that keeps up. That’s why we developed Area. A developer-friendly approach to streamline your business.
+          </p>
           <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-            <Button variant="primaryLight" size="md">
+            <Button variant="primaryLight" size="md" >
               Discover More
             </Button>
           </a>
         </div>
-        
-        {/* Three Column List with row-based rendering so horizontal lines align */}
-        <div className="mt-16">
-          <div className="grid grid-cols-3 gap-0">
-            {/* Area column - complete bordered card wrapper */}
-            <div className="px-6 py-0 md:py-4">
-              <div className="bg-white border border-gray-200 rounded-3xl">
-                {/* Title */}
-                <div className="px-6 py-6 text-center border-b border-gray-200">
-                  <h3 className="text-xl font-semibold text-gray-900">{columns[0].title}</h3>
-                </div>
-                {/* Items */}
-                {Array.from({ length: maxItems }).map((_, i) => (
-                  <div key={i} className={`px-6 py-6 ${i !== maxItems - 1 ? 'border-b border-gray-200' : ''}`}>
-                    <div className="flex items-start">
-                      <svg className="flex-shrink-0 w-4 h-4 text-gray-900 mt-0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
-                      <span className="ml-4 text-gray-900 font-roboto-mono text-[11px]">{columns[0].items[i] ?? ''}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
+        {/* Grid Layout Section */}
+          <div className="relative px-8 md:px-12 lg:px-16">
+            <div className="overflow-x-auto md:overflow-x-visible -mx-8 md:-mx-12 lg:-mx-16 px-8 md:px-12 lg:px-16">
+              <div className="min-w-[900px] md:min-w-0">
+                <div className="grid grid-cols-12 items-stretch mx-auto">
+          
+          {/* COLUMN 1: MAIN AREA CARD (3 columns) */}
+          <div className="col-span-4 lg:col-span-4 bg-white border border-gray-200 rounded-[2.5rem] relative z-10 shadow-sm">
+            <div className="h-28 flex items-center justify-center">
+              <h3 className="text-[28px] font-bold tracking-tighter text-black font-sans">
+                {columns[0].title}
+              </h3>
             </div>
 
-            {/* Middle and Right columns with aligned rows */}
-            <div className="col-span-2 grid grid-cols-2">
-              {/* Middle column */}
-              <div className="px-6">
-                <div className="py-6 border-b border-gray-200">
-                  <h3 className="text-xl font-semibold text-light-gray text-center">{columns[1].title}</h3>
-                </div>
-                {Array.from({ length: maxItems }).map((_, i) => (
-                  <div key={i} className={`py-6 ${i !== maxItems - 1 ? 'border-b border-gray-200' : ''}`}>
-                    <div className="flex items-start">
-                      <svg className="w-4 h-4 text-gray-900 mt-0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
-                      <span className="ml-4 text-gray-900 font-roboto-mono text-[11px]">{columns[1].items[i] ?? ''}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="border-t border-black w-full" />
 
-              {/* Right column */}
-              <div className="px-6 border-l border-gray-200">
-                <div className="py-6 border-b border-gray-200">
-                  <h3 className="text-xl font-semibold text-light-gray text-center">{columns[2].title}</h3>
-                </div>
-                {Array.from({ length: maxItems }).map((_, i) => (
-                  <div key={i} className={`py-6 ${i !== maxItems - 1 ? 'border-b border-gray-200' : ''}`}>
-                    <div className="flex items-start">
-                      <svg className="w-4 h-4 text-gray-900 mt-0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
-                      <span className="ml-4 text-gray-900 font-roboto-mono text-[11px]">{columns[2].items[i] ?? ''}</span>
-                    </div>
-                  </div>
-                ))}
+            {columns[0].items.map((item, i) => (
+              <div
+                key={i}
+                className={`h-20 flex items-center px-6 md:px-10 ${
+                  i !== maxItems - 1 ? "border-b border-gray-100" : ""
+                }`}
+              >
+                <CheckIcon className="w-3 h-3 text-black mr-4 shrink-0" />
+                <span
+                  className="text-[10.5px] tracking-tighter text-gray-500 font-normal leading-none"
+                  style={{ fontFamily: '"Roboto Mono", monospace' }}
+                >
+                  {item}
+                </span>
               </div>
-            </div>
+            ))}
           </div>
+
+          {/* COLUMN 2 & 3: COMPARISON GRID (6 columns) */}
+          {/* Total Table Width = 3 + 6 = 9 columns */}
+          <div className="col-span-8 lg:col-span-7 grid grid-cols-2 relative">
+            <div className="h-28 flex items-center justify-center">
+              <h3 
+                className="text-xl font-medium text-gray-400 tracking-tight" 
+                style={{ fontFamily: "'Raleway', sans-serif" }}
+              >
+                {columns[1].title}
+              </h3>
+            </div>
+            <div className="h-28 flex items-center justify-center">
+              <h3 
+                className="text-xl font-medium text-gray-400 tracking-tight"
+                style={{ fontFamily: "'Raleway', sans-serif" }}
+              >
+                {columns[2].title}
+              </h3>
+            </div>
+
+            <div className="col-span-2 border-t border-black w-full" />
+
+            {Array.from({ length: maxItems }).map((_, i) => (
+              <React.Fragment key={i}>
+                <div className="h-20 flex items-center px-6 md:px-10 border-b border-gray-100 border-r border-gray-200">
+                  <CheckIcon className="w-3 h-3 text-gray-400 mr-4 shrink-0" />
+                  <span className="text-[12px] font-mono tracking-tighter text-gray-500 leading-none">
+                    {columns[1].items[i]}
+                  </span>
+                </div>
+
+                <div className="h-20 flex items-center px-6 md:px-10 border-b border-gray-100">
+                  <CloseIcon className="w-3 h-3 text-gray-300 mr-4 shrink-0" />
+                  <span className="text-[12px] font-mono tracking-tighter text-gray-500 leading-none">
+                    {columns[2].items[i]}
+                  </span>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* EMPTY SPACE (3 columns) */}
+          <div className="hidden lg:block lg:col-span-1"></div>
+                </div>
+              </div>
+            </div>
         </div>
-      </SectionContainer>
-      {/* Full-width divider separating WhyChoose from next section */}
-      <div className="w-full h-px bg-gray-200 my-12" />
+        </SectionContainer>
     </section>
-  )
+  );
 }
