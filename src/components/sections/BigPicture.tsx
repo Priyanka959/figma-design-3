@@ -3,16 +3,12 @@ import Button from '@/components/ui/Button'
 
 export default function BigPicture() {
   return (
-    <section id="specifications" className="pt-2 pb-20 md:py-20 bg-white">
-      <SectionContainer maxWidth="2xl">
-        <div className="px-8 md:px-12 lg:px-16 relative">
-          {/* Decorative horizontal line that spans the left column and aligns with the image base on lg+ */}
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section id="specifications" className="py-20 bg-white">
+      <SectionContainer maxWidth="2xl" className="px-8 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div className="space-y-8">
-            {/* Horizontal line at top of left content */}
-            <div className="border-t border-gray-200 w-full mb-4"></div>
+            {/* top divider removed to use the full-width divider from WhyChoose above */}
             <h2 className="text-4xl md:text-5xl font-serif text-gray-900">
               See the Big Picture
             </h2>
@@ -69,7 +65,7 @@ export default function BigPicture() {
             
             <div>
               <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-                <Button variant="primaryLight" size="md" >
+                <Button variant="primaryLight" size="md" arrow>
                   Discover More
                 </Button>
               </a>
@@ -78,16 +74,15 @@ export default function BigPicture() {
           
           {/* Right Image */}
           <div className="relative">
-            <div className="min-h-[420px] md:aspect-square rounded-3xl overflow-hidden bg-sand-300">
+            <div className="aspect-square rounded-3xl overflow-hidden bg-sand-300">
               <div 
-                className="w-full h-[420px] md:h-full bg-cover bg-center"
+                className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage: "url('/assests/cylinder.webp')",
                 }}
               ></div>
             </div>
           </div>
-        </div>
         </div>
       </SectionContainer>
     </section>

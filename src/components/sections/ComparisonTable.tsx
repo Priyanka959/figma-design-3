@@ -25,8 +25,8 @@ export default function ComparisonTable() {
 
   return (
     <section className="bg-gray-50 py-16">
-      <SectionContainer>
-        <div className="max-w-7xl mx-auto w-full">
+      <SectionContainer maxWidth="2xl" className="px-8 md:px-12 lg:px-16">
+        <div className="w-full">
           <div className="relative">
             {/* main grid: 3 columns */}
             <div className="grid grid-cols-3 gap-0">

@@ -1,10 +1,9 @@
 import SectionContainer from '@/components/ui/SectionContainer'
-import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section className="pt-32 pb-8 bg-white">
-      <SectionContainer>
+      <SectionContainer maxWidth="2xl" className="px-8 md:px-12 lg:px-16">
         {/* Heading */}
         <div className="text-center mb-16 animate-fade-in px-4">
           <h1 className="text-[36px] sm:text-[96px] md:text-[56px] lg:text-[72px] font-serif font-normal text-gray-900 mb-8">
@@ -13,7 +12,7 @@ export default function Hero() {
         </div>
         
         {/* Hero Image with Background */}
-        <div className="relative px-8 md:px-12 lg:px-16 overflow-hidden">
+        <div className="relative overflow-hidden">
           {/* Sage green background blob - positioned with baseline aligned */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex items-end justify-center pointer-events-none z-0 w-full animate-scale-in">
             {/* Blob should be wider than the device so it peeks from behind on both sides */}

@@ -21,39 +21,59 @@ export default function MapSuccess() {
   ]
   
   return (
-    <section className="py-8 bg-white">
-      <SectionContainer className="px-3 sm:px-6 lg:px-0">
+    <section className="py-20 bg-white">
+      <SectionContainer maxWidth="2xl" className="px-8 md:px-12 lg:px-16">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
-            <h2 className="text-[48px] font-['Georgia',serif] text-[#111827] mt-0 mb-6">
-              Map Your Success
-            </h2>
+          <h2 className="text-[24px] md:text-5xl font-sans font-normal text-[#111827] mt-4 mb-0">
+            Map Your Success
+          </h2>
           <a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
-            <Button variant="primaryLight" size="md">
+            <Button variant="primaryLight" size="md" arrow>
               Discover More
             </Button>
           </a>
         </div>
         
-        {/* Steps Grid - maintain 3 columns on small screens (no stacking) */}
-        <div className="overflow-x-auto md:overflow-x-visible -mx-3 sm:-mx-6 lg:mx-0">
-          <div className="min-w-[900px] md:min-w-0">
-            <div className="grid grid-cols-3 gap-12">
-              {steps.map((step, index) => (
-                <div key={index} className="space-y-4">
-                  <div className="w-full h-[1px] bg-gray-300 mb-6"></div>
-                  <div className="text-[55px] md:text-[70px] font-dm text-[#929292] leading-none">
-                    {step.number}
-                  </div>
-                  <h3 className="text-[14px] md:text-[16px] font-medium text-gray-900 font-dm">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-dm text-[#6F6F6F] leading-relaxed">
-                    {step.description}
-                  </p>
+        {/* Steps Grid - slider on mobile, grid on larger screens */}
+        <div className="overflow-x-auto md:overflow-visible">
+          <div className="flex md:hidden gap-12 w-max snap-x snap-mandatory">
+            {steps.map((step, index) => (
+              <div key={index} className="space-y-4 flex-shrink-0 w-80 snap-center">
+                <div className="w-full h-[1px] bg-gray-300 mb-6"></div>
+                <div className="text-5xl font-serif text-sage-500 opacity-50">
+                  {step.number}
                 </div>
-              ))}
-            </div>
+                <h3 className="text-lg font-medium text-gray-900 font-dm">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* Mobile Slider Indicators */}
+          <div className="flex md:hidden justify-center mt-8 space-x-2">
+            {steps.map((_, index) => (
+              <div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>
+            ))}
+          </div>
+          <div className="hidden md:grid md:grid-cols-3 md:gap-12">
+            {steps.map((step, index) => (
+              <div key={index} className="space-y-4">
+                <div className="w-full h-[1px] bg-gray-300 mb-6"></div>
+                <div className="text-5xl font-serif text-sage-500 opacity-50">
+                  {step.number}
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 font-dm">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </SectionContainer>

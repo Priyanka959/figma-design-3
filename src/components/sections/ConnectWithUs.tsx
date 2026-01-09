@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 export default function ConnectWithUs() {
   return (
     <section id="resources" className="py-20 bg-white">
-      <SectionContainer className="px-3 sm:px-6 lg:px-0">
+      <SectionContainer maxWidth="2xl" className="px-8 md:px-12 lg:px-16">
         <div className="text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif text-gray-900">
             Connect with us
