@@ -134,7 +134,7 @@ export default function WhyChoose(): JSX.Element {
 
               {Array.from({ length: maxItems }).map((_, i) => (
                 <React.Fragment key={i}>
-                  <div className="h-20 flex items-center px-6 md:px-10 border-b border-gray-100">
+                  <div className="h-20 flex items-center px-6 md:px-10 border-b border-gray-100 border-r border-black">
                     <CheckIcon className="w-3 h-3 text-gray-400 mr-4 shrink-0" />
                     <span className="text-[12px] font-mono tracking-tighter text-gray-500 leading-none">
                       {columns[1].items[i]}

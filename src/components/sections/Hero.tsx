@@ -12,11 +12,11 @@ export default function Hero() {
         </div>
         
         {/* Hero Image with Background */}
-        <div className="relative overflow-hidden">
+        <div className="relative">
           {/* Sage green background blob - positioned with baseline aligned */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex items-end justify-center pointer-events-none z-0 w-full animate-scale-in">
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex items-end justify-center pointer-events-none z-0 w-[120%] animate-scale-in">
             {/* Blob should be wider than the device so it peeks from behind on both sides */}
-            <div className="w-[90%] md:w-[140%] max-w-[1400px] h-[280px] md:h-[320px] lg:h-[350px] bg-sage-300 rounded-[2rem] md:rounded-[3rem]"></div>
+            <div className="w-full md:w-[140%] max-w-[1400px] h-[280px] md:h-[320px] lg:h-[350px] bg-sage-300 rounded-[3rem] md:rounded-[4rem] mx-8"></div>
           </div>
           
           {/* Device mockup - desktop (laptop) */}
