@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://figma-design-3-01.onrender.com
+
+# Sitemaps
+Sitemap: https://figma-design-3-01.onrender.com/sitemap.xml

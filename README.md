@@ -109,6 +109,16 @@ The project uses:
 - Lazy loading components
 - Minimal JavaScript bundle
 
+## 🗺️ Sitemap & robots (automatic)
+
+This project uses **next-sitemap** to generate `sitemap.xml` and `robots.txt` automatically during the build.
+
+- Install dependencies: `npm install`
+- Generate sitemap and robots: `npm run build` (a `postbuild` script runs `next-sitemap`) or run `npm run sitemap` to generate without building.
+- Configuration: `next-sitemap.config.js` — update `siteUrl` if you change your production domain.
+
+If you prefer a static sitemap, delete `next-sitemap.config.js` and keep `public/sitemap.xml` instead.
+
 ## 📄 License
 
 This project is for demonstration purposes.
