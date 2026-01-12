@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  // Avoid running ESLint during `next build` in CI/deploy to prevent
+  // build-time failures from environment-specific ESLint CLI options.
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['images.unsplash.com'],
     unoptimized: true,
