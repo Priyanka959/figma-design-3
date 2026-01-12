@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/og.jpg',
+        url: '/og.png',
         width: 1200,
         height: 630,
         alt: 'Area — preview',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Area — Home',
     description:
       "Area turns complex regional data into clear, actionable dashboards and visuals—giving teams precise insights, faster decisions, and measurable efficiency gains across every market.",
-    images: ['/og.jpg'],
+    images: ['/og.png'],
   },
 }
 
