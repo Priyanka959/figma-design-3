@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     images: [
       {
-        url: '/assests/green-globe.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: `${SITE_TITLE} — preview`,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ['/assests/green-globe.jpg'],
+    images: ['/og-image.svg'],
   },
   icons: {
     icon: '/favicon.ico',
@@ -65,7 +65,7 @@ const jsonLd = {
       "url": metadataBase.href,
       "logo": {
         "@type": "ImageObject",
-        "url": "/assests/green-globe.jpg"
+          "url": "/og-image.svg"
       }
     },
     {
