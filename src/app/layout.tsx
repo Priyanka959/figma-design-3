@@ -6,7 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 // Placeholder site details — replace these values with your real site info
 const SITE_TITLE = 'Area'
-const SITE_DESCRIPTION = "We've cracked the code. Discover the big picture with Area."
+const SITE_DESCRIPTION =
+  "Area turns complex regional data into clear, actionable dashboards and visuals—giving teams precise insights, faster decisions, and measurable efficiency gains across every market."
+// Production domain for Open Graph / Twitter card URLs
 const metadataBase = new URL('https://figma-design-3-01.onrender.com')
 
 export const metadata: Metadata = {
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     images: [
       {
-        url: '/og-image.svg',
+        url: new URL('/og.jpg', metadataBase).href,
         width: 1200,
         height: 630,
         alt: `${SITE_TITLE} — preview`,
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.svg'],
+    images: [new URL('/og.jpg', metadataBase).href],
   },
   icons: {
     icon: '/favicon.ico',
@@ -65,7 +67,7 @@ const jsonLd = {
       "url": metadataBase.href,
       "logo": {
         "@type": "ImageObject",
-          "url": "/og-image.svg"
+          "url": new URL('/og.jpg', metadataBase).href
       }
     },
     {
@@ -88,6 +90,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={String(metadata.title ?? '')} />
+        <meta property="og:description" content={metadata.description ?? ''} />
+        <meta property="og:url" content={metadataBase.href} />
+        <meta property="og:site_name" content={metadata.openGraph?.siteName} />
+        <meta name="image" property="og:image" content={new URL('/og.jpg', metadataBase).href} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={String(metadata.twitter?.title ?? metadata.title ?? '')} />
+        <meta name="twitter:description" content={String(metadata.twitter?.description ?? metadata.description ?? '')} />
+        <meta name="twitter:image" content={new URL('/og.jpg', metadataBase).href} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

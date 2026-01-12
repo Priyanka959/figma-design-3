@@ -11,21 +11,34 @@ import Testimonial from '@/components/sections/Testimonial'
 import MapSuccess from '@/components/sections/MapSuccess'
 import ConnectWithUs from '@/components/sections/ConnectWithUs'
 
-// Inferred from project: SITE_TITLE = 'Area', SITE_DESCRIPTION from layout
+// Page-level metadata — inherits metadataBase from layout.tsx
+// No hardcoded domains; Next.js resolves relative URLs using metadataBase
 export const metadata: Metadata = {
   title: 'Home | Area',
-  description: "We've cracked the code. Discover the big picture with Area.",
+  description:
+    "Area turns complex regional data into clear, actionable dashboards and visuals—giving teams precise insights, faster decisions, and measurable efficiency gains across every market.",
   openGraph: {
-    title: 'Area',
-    description: "We've cracked the code. Discover the big picture with Area.",
-    url: 'https://figma-design-3-01.onrender.com/',
-    images: ['/assests/green-globe.jpg'],
+    title: 'Area — Home',
+    description:
+      "Area turns complex regional data into clear, actionable dashboards and visuals—giving teams precise insights, faster decisions, and measurable efficiency gains across every market.",
+    siteName: 'Area',
+    url: '/',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Area — preview',
+      },
+    ],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Area',
-    description: "We've cracked the code. Discover the big picture with Area.",
-    images: ['/assests/green-globe.jpg'],
+    title: 'Area — Home',
+    description:
+      "Area turns complex regional data into clear, actionable dashboards and visuals—giving teams precise insights, faster decisions, and measurable efficiency gains across every market.",
+    images: ['/og.jpg'],
   },
 }
 
